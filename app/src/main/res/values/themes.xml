@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!-- <style name="Base.Theme.APICocktail" parent="Theme.Material3.DayNight.NoActionBar"> -->
+    <!-- Customize your light theme here. -->
+    <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">#ff0000</item>
+        <item name="colorPrimary">#3f515b</item>
+        <item name="colorPrimaryDark">#303f9f</item>
+        <item name="colorAccent">#ff4081</item>
+    </style>
+    <!-- <style name="Theme.APICocktail" parent="Base.Theme.APICocktail" /> -->
+</resources>
