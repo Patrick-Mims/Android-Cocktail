@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
@@ -13,7 +14,9 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_INSTRUCTIONS = "INSTRUCTIONS";
     public static final String EXTRA_TYPE = "TYPE";
 
-    public static Intent newIntent(Context packageContext, String EXTRA_CATEGORY, String EXTRA_DRINK, String EXTRA_INSTRUCTIONS, String EXTRA_TYPE) {
+    public static final String EXTRA_IMAGE = "IMAGE";
+
+    public static Intent newIntent(Context packageContext, String EXTRA_CATEGORY, String EXTRA_DRINK, String EXTRA_INSTRUCTIONS, String EXTRA_TYPE, String EXTRA_IMAGE) {
 
         Intent intent = new Intent(packageContext, DetailActivity.class);
 
@@ -21,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_DRINK, "DRINK");
         intent.putExtra(EXTRA_INSTRUCTIONS, "INSTRUCTIONS");
         intent.putExtra(EXTRA_TYPE, "TYPE");
+        intent.putExtra(EXTRA_TYPE, "IMAGE");
 
         return intent;
     }
@@ -35,15 +39,20 @@ public class DetailActivity extends AppCompatActivity {
         String drink = getIntent().getStringExtra(EXTRA_DRINK);
         String instructions = getIntent().getStringExtra(EXTRA_INSTRUCTIONS);
         String type = getIntent().getStringExtra(EXTRA_TYPE);
+        String image = getIntent().getStringExtra(EXTRA_IMAGE);
 
         TextView tvCategory = findViewById(R.id.category);
         TextView tvDrinks = findViewById(R.id.drink);
         TextView tvInstructions = findViewById(R.id.instructions);
         TextView tvType = findViewById(R.id.type);
+        ImageView imageView = findViewById(R.id.imgView);
 
         tvCategory.setText(category);
         tvDrinks.setText(drink);
         tvInstructions.setText(instructions);
         tvType.setText(type);
+
+        /* this is where I stopped */
+        imageView.setImageResource(0);
     }
 }
