@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_CATEGORY = "CATEGORY";
     public static final String EXTRA_DRINK = "DRINK";
     public static final String EXTRA_INSTRUCTIONS = "INSTRUCTIONS";
     public static final String EXTRA_TYPE = "TYPE";
-
     public static final String EXTRA_IMAGE = "IMAGE";
 
     public static Intent newIntent(Context packageContext, String EXTRA_CATEGORY, String EXTRA_DRINK, String EXTRA_INSTRUCTIONS, String EXTRA_TYPE, String EXTRA_IMAGE) {
@@ -34,7 +38,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        // getIntent() always returns the intent that started the activity.
         String category = getIntent().getStringExtra(EXTRA_CATEGORY);
         String drink = getIntent().getStringExtra(EXTRA_DRINK);
         String instructions = getIntent().getStringExtra(EXTRA_INSTRUCTIONS);
@@ -45,14 +48,18 @@ public class DetailActivity extends AppCompatActivity {
         TextView tvDrinks = findViewById(R.id.drink);
         TextView tvInstructions = findViewById(R.id.instructions);
         TextView tvType = findViewById(R.id.type);
+
         ImageView imageView = findViewById(R.id.imgView);
+
+        Picasso.get().load(Uri.parse(image)).into(imageView);
 
         tvCategory.setText(category);
         tvDrinks.setText(drink);
         tvInstructions.setText(instructions);
         tvType.setText(type);
 
-        /* this is where I stopped */
-        imageView.setImageResource(0);
+        // imageView.setImageDrawable(image2);
+
+        Log.v("LOG", String.valueOf(Uri.parse(image)));
     }
 }

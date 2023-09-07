@@ -20,18 +20,17 @@ public class DataTimer {
             }
         };
 
-        Log.v("LOG", "Start Timer has been executed...");
+        // Log.v("LOG", "Start Timer has been executed...");
 
         Timer timer = new Timer(true);
-        // timer.schedule(timerTask, 0, 10000);
-        timer.schedule(timerTask, 1000 * 60 * 60 * 2);
+        timer.schedule(timerTask, 0, 10000);
     }
 
     private void updateView(final long elapsedMilliseconds, TextView messageTextView) {
         messageTextView.post(new Runnable() {
             @Override
             public void run() {
-                Log.v("LOG", "The View was just updated another: " + 1000 * 60 * 60 * 2);
+          //      Log.v("LOG", "The View was just updated another: " + 1000);
                 messageTextView.setText("Number of Seconds that have lapsed => " + elapsedMilliseconds);
             }
         });
