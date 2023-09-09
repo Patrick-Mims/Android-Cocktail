@@ -17,7 +17,7 @@ import edu.sfsu.api_cocktail.models.DrinkModel;
 
 public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
-    private static final String url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=s";
+    private static final String url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=c";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

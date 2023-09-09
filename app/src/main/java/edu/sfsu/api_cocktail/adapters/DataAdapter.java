@@ -8,13 +8,10 @@ import static edu.sfsu.api_cocktail.DetailActivity.EXTRA_TYPE;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,9 +45,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             super(view);
 
             this.imageView = view.findViewById(R.id.theImageView);
-            this.strCategory = view.findViewById(R.id.strCategory);
+            // this.strCategory = view.findViewById(R.id.strCategory);
             this.strDrink = view.findViewById(R.id.strDrink);
-            this.strInstructions = view.findViewById(R.id.strInstructions);
+            // this.strInstructions = view.findViewById(R.id.strInstructions);
             this.recyclerView = view.findViewById(R.id.recyclerView);
 
             context = view.getContext();
@@ -74,7 +71,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, DetailActivity.class);
+
                 intent.putExtra(EXTRA_CATEGORY, mod.getStrCategory());
                 intent.putExtra(EXTRA_DRINK, mod.getStrDrink());
                 intent.putExtra(EXTRA_IMAGE, mod.getStrDrinkThumb());

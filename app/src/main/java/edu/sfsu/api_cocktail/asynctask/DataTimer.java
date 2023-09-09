@@ -1,6 +1,5 @@
 package edu.sfsu.api_cocktail.asynctask;
 
-import android.util.Log;
 import android.widget.TextView;
 
 import java.util.Timer;

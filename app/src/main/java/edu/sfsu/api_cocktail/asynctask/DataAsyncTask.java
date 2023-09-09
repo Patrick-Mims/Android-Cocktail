@@ -1,5 +1,6 @@
 package edu.sfsu.api_cocktail.asynctask;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.ProgressBar;
@@ -15,6 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import edu.sfsu.api_cocktail.MainActivity;
 import edu.sfsu.api_cocktail.adapters.DataAdapter;
 import edu.sfsu.api_cocktail.models.DrinkModel;
 
@@ -31,9 +33,19 @@ public class DataAsyncTask extends AsyncTask<String, Integer, String> {
         this.model = model;
     }
 
+    ProgressDialog progressDialog;
+    int prog = 0;
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
+    /*
+        progressDialog = new ProgressDialog(context);
+        prog = progressDialog.getMax();
+        progressDialog.setMessage("Loading..." + prog);
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+    */
     }
 
     @Override
